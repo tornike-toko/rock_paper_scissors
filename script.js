@@ -1,7 +1,21 @@
 let humanScore = 0
 let compScore = 0
 
-playRound()
+playGame()
+
+function playGame(){
+    console.log("Round 1")
+    playRound()
+    console.log("Round 2")
+    playRound()
+    console.log("Round 3")
+    playRound()
+    console.log("Round 4")
+    playRound()
+    console.log("Round 5")
+    playRound()
+}
+
 
 function playRound(humanChoice,compChoice){
     humanChoice = getHumanChoice()
@@ -19,7 +33,7 @@ function playRound(humanChoice,compChoice){
         console.log("human won")
         humanScore++
     }else{
-        console.log("human lose : comp won")
+        console.log("human lose")
         compScore++
     }
     console.log("human score:" + humanScore)
