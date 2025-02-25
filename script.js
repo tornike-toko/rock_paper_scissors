@@ -1,4 +1,9 @@
-console.log(getCompChoice())
+console.log(getHumanChoice())
+
+function getHumanChoice(){
+    let humanChoice = prompt("input your choice : rock, paper, scissors")
+    return humanChoice.toLocaleLowerCase()
+}
 
 function getCompChoice(){
     let compChoice = getRandomInt(3)
