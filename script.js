@@ -5,6 +5,8 @@ const rockBtn = document.querySelector('#R')
 const paperBtn = document.querySelector('#P')
 const scissorsBtn = document.querySelector('#S')
 
+const scoreDispaly = document.querySelector("#scoreDis")
+
 rockBtn.addEventListener("click", rockSelected)
 function rockSelected(){
     let temp = getCompChoice()
@@ -30,15 +32,19 @@ function playRound(humanChoice,compChoice){
     }else if(humanChoice == "rock" && compChoice == "scissors"){
         console.log("human won")
         humanScore++
+        scoreDispaly.innerText = `Human : ${humanScore} - ${compScore} : Computer`
     }else if(humanChoice == "paper" && compChoice == "rock"){
         console.log("human won")
         humanScore++
+        scoreDispaly.innerText = `Human : ${humanScore} - ${compScore} : Computer`
     }else if(humanChoice == "scissors" && compChoice == "paper"){
         console.log("human won")
         humanScore++
+        scoreDispaly.innerText = `Human : ${humanScore} - ${compScore} : Computer`
     }else{
         console.log("human lose")
         compScore++
+        scoreDispaly.innerText = `Human : ${humanScore} - ${compScore} : Computer`
     }
     console.log("human score:" + humanScore)
     console.log("comp score:" + compScore)
