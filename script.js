@@ -5,25 +5,25 @@ const rockBtn = document.querySelector('#R')
 const paperBtn = document.querySelector('#P')
 const scissorsBtn = document.querySelector('#S')
 
-// playGame()
-
-function playGame(){
-    console.log("Round 1")
-    playRound()
-    console.log("Round 2")
-    playRound()
-    console.log("Round 3")
-    playRound()
-    console.log("Round 4")
-    playRound()
-    console.log("Round 5")
-    playRound()
+rockBtn.addEventListener("click", rockSelected)
+function rockSelected(){
+    let temp = getCompChoice()
+    playRound("rock", temp)
 }
 
+paperBtn.addEventListener("click", paperSelected)
+function paperSelected(){
+    let temp = getCompChoice()
+    playRound("paper", temp)
+}
+
+scissorsBtn.addEventListener("click", scissorsSelected)
+function scissorsSelected(){
+    let temp = getCompChoice()
+    playRound("scissors", temp)
+}
 
 function playRound(humanChoice,compChoice){
-    humanChoice = getHumanChoice()
-    compChoice = getCompChoice()
 
     if(humanChoice == compChoice){
         console.log("it is tie")
@@ -42,12 +42,6 @@ function playRound(humanChoice,compChoice){
     }
     console.log("human score:" + humanScore)
     console.log("comp score:" + compScore)
-}
-
-
-function getHumanChoice(){
-    let humanChoice = prompt("input your choice : rock, paper, scissors")
-    return humanChoice.toLocaleLowerCase()
 }
 
 function getCompChoice(){
