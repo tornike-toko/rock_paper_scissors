@@ -1,7 +1,11 @@
 let humanScore = 0
 let compScore = 0
 
-playGame()
+const rockBtn = document.querySelector('#R')
+const paperBtn = document.querySelector('#P')
+const scissorsBtn = document.querySelector('#S')
+
+// playGame()
 
 function playGame(){
     console.log("Round 1")
