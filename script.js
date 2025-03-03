@@ -7,6 +7,8 @@ const scissorsBtn = document.querySelector('#S')
 
 const scoreDispaly = document.querySelector("#scoreDis")
 
+const currentRound = document.querySelector("#currentRound")
+
 rockBtn.addEventListener("click", rockSelected)
 function rockSelected(){
     let temp = getCompChoice()
@@ -29,22 +31,27 @@ function playRound(humanChoice,compChoice){
 
     if(humanChoice == compChoice){
         console.log("it is tie")
+        currentRound.innerText = "It Is Tie"
     }else if(humanChoice == "rock" && compChoice == "scissors"){
         console.log("human won")
         humanScore++
         scoreDispaly.innerText = `Human : ${humanScore} - ${compScore} : Computer`
+        currentRound.innerText = "You Win"
     }else if(humanChoice == "paper" && compChoice == "rock"){
         console.log("human won")
         humanScore++
         scoreDispaly.innerText = `Human : ${humanScore} - ${compScore} : Computer`
+        currentRound.innerText = "You Win"
     }else if(humanChoice == "scissors" && compChoice == "paper"){
         console.log("human won")
         humanScore++
         scoreDispaly.innerText = `Human : ${humanScore} - ${compScore} : Computer`
+        currentRound.innerText = "You Win"
     }else{
         console.log("human lose")
         compScore++
         scoreDispaly.innerText = `Human : ${humanScore} - ${compScore} : Computer`
+        currentRound.innerText = "You lose"
     }
     console.log("human score:" + humanScore)
     console.log("comp score:" + compScore)
