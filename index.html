@@ -4,25 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
-
-    <style>
-        body{
-            width: 90%;
-            height: 75vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="scoreDis">Human : 0 - 0 : Computer</div>
-    <div id="currentRound"></div>
-    <div class="wrapper">
-        <button id="R">rock</button>
-        <button id="P">paper</button>
-        <button id="S">Scissors</button>
+    <div class="content-wrapper">
+        <h1>Rock Paper Scissors</h1>
+        <div id="currentRound">-</div>
+        <div class="wrapper">
+            <button id="R">rock</button>
+            <button id="P">paper</button>
+            <button id="S">Scissors</button>
+        </div>
+        <div class="scores">
+            <div class="won">Won : 0</div>
+            <div class="draw">Draw : 0</div>
+            <div class="lost">lost : 0</div>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>

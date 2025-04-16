@@ -1,11 +1,16 @@
 let humanScore = 0
 let compScore = 0
+let drawScore = 0
 
 const rockBtn = document.querySelector('#R')
 const paperBtn = document.querySelector('#P')
 const scissorsBtn = document.querySelector('#S')
 
 const scoreDispaly = document.querySelector("#scoreDis")
+
+const won = document.querySelector(".won")
+const draw = document.querySelector(".draw")
+const lost = document.querySelector(".lost")
 
 const currentRound = document.querySelector("#currentRound")
 
@@ -31,26 +36,27 @@ function playRound(humanChoice,compChoice){
 
     if(humanChoice == compChoice){
         console.log("it is tie")
+        draw.innerText = `Draw : ${++drawScore}`
         currentRound.innerText = "It Is Tie"
     }else if(humanChoice == "rock" && compChoice == "scissors"){
         console.log("human won")
         humanScore++
-        scoreDispaly.innerText = `Human : ${humanScore} - ${compScore} : Computer`
+        won.innerText = `Won : ${humanScore}`
         currentRound.innerText = "You Win"
     }else if(humanChoice == "paper" && compChoice == "rock"){
         console.log("human won")
         humanScore++
-        scoreDispaly.innerText = `Human : ${humanScore} - ${compScore} : Computer`
+        won.innerText = `Won : ${humanScore}`
         currentRound.innerText = "You Win"
     }else if(humanChoice == "scissors" && compChoice == "paper"){
         console.log("human won")
         humanScore++
-        scoreDispaly.innerText = `Human : ${humanScore} - ${compScore} : Computer`
+        won.innerText = `Won : ${humanScore}`
         currentRound.innerText = "You Win"
     }else{
         console.log("human lose")
         compScore++
-        scoreDispaly.innerText = `Human : ${humanScore} - ${compScore} : Computer`
+        lost.innerText = `Lost : ${compScore}`
         currentRound.innerText = "You lose"
     }
     console.log("human score:" + humanScore)
